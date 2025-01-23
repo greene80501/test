@@ -1,1 +1,2 @@
 ffmpeg -f v4l2 -i /dev/video0 -pix_fmt yuv420p output.mp4
+gst-launch-1.0 v4l2src ! videoconvert ! x264enc ! avimux ! filesink location=output.avi
